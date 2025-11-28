@@ -2,23 +2,25 @@ package vfs;
 
 public class Main {
     public static void main(String[] args) {
-        FolderItem root = new FolderItem("root");
-        FolderItem docs = new FolderItem("docs");
-        FileItem f1 = new FileItem("readme.md");
-        FileItem f2 = new FileItem("notes.txt");
 
-        docs.add(f2);
-        root.add(f1);
-        root.add(docs);
+        FileItem normalFile = new FileItem("report.pdf");
 
-        System.out.println("Display tree:");
-        root.display("");
+        FileItem encryptedFile = new EncryptedFile(normalFile);
+        FileItem compressedFile = new CompressedFile(normalFile);
 
-        System.out.println("\nIterating with VFSIterator:");
-        VFSIterator it = new VFSIterator(root);
-        while (it.hasNext()) {
-            VFSNode node = it.next();
-            System.out.println("Found: " + node.getName());
-        }
+        System.out.println("Normal:");
+        normalFile.display("");
+
+        System.out.println("\nEncrypted:");
+        encryptedFile.display("");
+
+        System.out.println("\nCompressed:");
+        compressedFile.display("");
+
+        System.out.println("\nOpening encrypted file:");
+        ((EncryptedFile) encryptedFile).open();
+
+        System.out.println("\nOpening compressed file:");
+        ((CompressedFile) compressedFile).open();
     }
 }
