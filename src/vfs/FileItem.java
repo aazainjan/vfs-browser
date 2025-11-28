@@ -1,15 +1,9 @@
 package vfs;
 
-public class FileItem implements VFSNode {
-    private String name;
+public class FileItem extends FileComponent {
 
     public FileItem(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String getName() {
-        return name;
+        super(name);
     }
 
     @Override

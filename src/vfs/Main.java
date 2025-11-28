@@ -2,25 +2,30 @@ package vfs;
 
 public class Main {
     public static void main(String[] args) {
+        FileSystemFacade fs = new FileSystemFacade();
 
-        FileItem normalFile = new FileItem("report.pdf");
+        fs.createFile("/", "hello.txt");
+        fs.createFolder("/", "Documents");
+        fs.createFile("/Documents", "notes.txt");
 
-        FileItem encryptedFile = new EncryptedFile(normalFile);
-        FileItem compressedFile = new CompressedFile(normalFile);
+        System.out.println("Initial File System:");
+        fs.showFileSystem();
 
-        System.out.println("Normal:");
-        normalFile.display("");
+        fs.move("/hello.txt", "/Documents");
 
-        System.out.println("\nEncrypted:");
-        encryptedFile.display("");
+        System.out.println("\nAfter moving hello.txt to Documents:");
+        fs.showFileSystem();
 
-        System.out.println("\nCompressed:");
-        compressedFile.display("");
+        System.out.println("\nDecorators demo:");
+        FileItem secret = new FileItem("secret.txt");
+        FileDecorator encrypted = new EncryptedFile(secret);
+
+        FolderItem root = fs.navigateToFolder("/");
+        root.add(encrypted);
+
+        fs.showFileSystem();
 
         System.out.println("\nOpening encrypted file:");
-        ((EncryptedFile) encryptedFile).open();
-
-        System.out.println("\nOpening compressed file:");
-        ((CompressedFile) compressedFile).open();
+        encrypted.open();
     }
 }
