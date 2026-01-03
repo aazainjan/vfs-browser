@@ -1,12 +1,12 @@
 # Virtual File System (VFS) Simulation in Java 📁
 
-> A Java-based project that simulates a hierarchical file system, demonstrating core Software Design Patterns to manage file and folder operations, including dynamic features like encryption and compression.
+> A 100% Java-based project that simulates a hierarchical file system, demonstrating core Software Design Patterns to manage file and folder operations, including dynamic features like encryption and compression.
 
 ---
 
 ## 🚀 Technical Highlights & Design Patterns
 
-This project is structured around key object-oriented design patterns to ensure modularity, flexibility, and maintainability:
+This project is structured relative to key object-oriented design patterns to ensure modularity, flexibility, and maintainability:
 
 ### Structural Patterns
 
@@ -93,36 +93,37 @@ Final File System:
    + Documents
       - notes.txt
       - hello.txt
+
 💡 How to Extend This Project
-Want to add more cool features? Here are a few ideas:
+Want to add more cool features? Here are a few ideas that you could try:
 
-Add a new file type or decorator
+↬ Add a new file type or decorator
 
-Create a new class that extends FileDecorator (like EncryptedFile or CompressedFile).
+↬ Create a new class that extends FileDecorator (like EncryptedFile or CompressedFile).
 
-Implement display() and open() methods for your new behavior.
+↬ Implement display() and open() methods for your new behavior.
 
-Add the new decorator to files in Main.java to test it.
+↬ Add the new decorator to files in Main.java to test it.
 
-Add more file system operations
+↬ Add more file system operations
 
 For example, deleteFile(), renameFile(), or copyFile() in FileSystemFacade.java.
 
 These can use the existing FolderItem and FileComponent structure to stay consistent.
 
-Enhance the iterator
+↬ Enhance the iterator
 
-Add other traversal options like BFS or filtering by file type.
+↬ Add other traversal options like BFS or filtering by file type.
 
-Modify VFSIterator or create a new iterator class.
+↬ Modify VFSIterator or create a new iterator class.
 
-Improve output formatting
+↬ Improve output formatting
 
-Use colors, indentation, or icons to make the FS display look nicer.
+↬ Use colors, indentation, or icons to make the FS display look nicer.
 
 For example, show [FOLDER] or [FILE] tags in the tree output.
 
 🧑‍💻 Author
 Aazain Jan
 
-Project created as part of my Software Construction & Development (SCD) coursework (Fall-2025).
+This project was created as part of my Software Construction & Development (SCD) coursework (Fall-2025).
