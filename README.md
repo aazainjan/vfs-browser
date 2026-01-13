@@ -25,26 +25,25 @@ This project is structured relative to key object-oriented design patterns to en
 
 ## 📂 Project Structure
 
+```
 SCD Lab Project/
 │
 ├── src/vfs/
-│ ├── Main.java # Application Entry Point and Client Demo
-│ ├── FileSystemFacade.java # Facade: Simplifies high-level FS operations
-│ ├── FileComponent.java # Composite: Base abstract class (Component)
-│ ├── FileItem.java # Composite: Concrete Leaf (Regular File)
-│ ├── FolderItem.java # Composite: Concrete Composite (Directory)
-│ ├── FileDecorator.java # Decorator: Base abstract class
-│ ├── EncryptedFile.java # Decorator: Adds (Encrypted) functionality
-│ ├── CompressedFile.java # Decorator: Adds (Compressed) functionality
-│ ├── VFSNode.java # Interface for display/traversal
-│ └── VFSIterator.java # Iterator: Custom DFS Traversal
+│   ├── Main.java                 # Application entry point and client demo
+│   ├── FileSystemFacade.java     # Facade: simplifies high-level FS operations
+│   ├── FileComponent.java        # Composite: base abstract class
+│   ├── FileItem.java             # Composite: concrete leaf (regular file)
+│   ├── FolderItem.java           # Composite: concrete composite (directory)
+│   ├── FileDecorator.java        # Decorator: base abstract class
+│   ├── EncryptedFile.java        # Decorator: adds encryption functionality
+│   ├── CompressedFile.java       # Decorator: adds compression functionality
+│   ├── VFSNode.java              # Interface for display/traversal
+│   └── VFSIterator.java          # Iterator: custom DFS traversal
+│
 └── README.md
-
-yaml
-Copy code
+```
 
 ---
-
 ## 🛠️ Getting Started
 
 ### Prerequisites
@@ -57,16 +56,21 @@ Compile the source files into a `bin` directory:
 
 ```bash
 javac -d bin src/vfs/*.java
+```
+
 Run the compiled application:
 
-bash
-Copy code
+```bash
 java -cp bin vfs.Main
-The program will output the initial structure, demonstrate file movement, and show the effects of the decorators.
+```
 
-🖥️ Demonstration Output
-markdown
-Copy code
+The program outputs the initial structure, demonstrates file movement, and shows the effects of decorators.
+
+---
+
+## 🖥️ Demonstration Output
+
+```
 Initial File System:
 + root
    - hello.txt
@@ -93,37 +97,30 @@ Final File System:
    + Documents
       - notes.txt
       - hello.txt
+```
 
-💡 How to Extend This Project
-Want to add more cool features? Here are a few ideas that you could try:
+---
 
-↬ Add a new file type or decorator
+## 💡 How to Extend This Project
 
-↬ Create a new class that extends FileDecorator (like EncryptedFile or CompressedFile).
+* Add a new file type or decorator
+* Create a new class extending `FileDecorator` (similar to `EncryptedFile` or `CompressedFile`)
+* Implement `display()` and `open()` methods for the new behavior
+* Apply the decorator to files in `Main.java`
 
-↬ Implement display() and open() methods for your new behavior.
+### Additional Enhancements
 
-↬ Add the new decorator to files in Main.java to test it.
+* Add more file system operations such as `deleteFile()`, `renameFile()`, or `copyFile()` in `FileSystemFacade`
+* Enhance the iterator with BFS or file-type filtering
+* Improve output formatting using icons or tags like `[FOLDER]` and `[FILE]`
 
-↬ Add more file system operations
+---
 
-For example, deleteFile(), renameFile(), or copyFile() in FileSystemFacade.java.
+## 💻 Author
 
-These can use the existing FolderItem and FileComponent structure to stay consistent.
+**Aazain Jan**
 
-↬ Enhance the iterator
+This project was created as part of Software Construction & Development (SCD) coursework
+*Fall 2025*
 
-↬ Add other traversal options like BFS or filtering by file type.
-
-↬ Modify VFSIterator or create a new iterator class.
-
-↬ Improve output formatting
-
-↬ Use colors, indentation, or icons to make the FS display look nicer.
-
-For example, show [FOLDER] or [FILE] tags in the tree output.
-
-🧑‍💻 Author
-Aazain Jan
-
-This project was created as part of my Software Construction & Development (SCD) coursework (Fall-2025).
+---
