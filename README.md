@@ -4,9 +4,16 @@
 
 ---
 
+## ✨ Features
+
+- Hierarchical file and folder system
+- Runtime file decoration (encryption, compression)
+- Depth-First traversal of file system
+- Clean separation using design patterns
+
 ## 🚀 Technical Highlights & Design Patterns
 
-This project is structured relative to key object-oriented design patterns to ensure modularity, flexibility, and maintainability:
+This project is structured around key object-oriented design patterns to ensure modularity, flexibility, and maintainability:
 
 ### Structural Patterns
 
