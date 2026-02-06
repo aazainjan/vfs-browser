@@ -51,6 +51,7 @@ SCD Lab Project/
 ```
 
 ---
+
 ## 🛠️ Getting Started
 
 ### Prerequisites
@@ -108,18 +109,40 @@ Final File System:
 
 ---
 
+## 🗑️ File Deletion Demonstration
+
+The system also supports deleting files through the `FileSystemFacade`..
+
+Example usage in `Main.java`:
+
+```java
+fs.deleteFile("/Documents/notes.txt");
+```
+
+```
+Deleting notes.txt from Documents:
+Deleted file: /Documents/notes.txt
+
+After deleting notes.txt:
++ root
+   + Documents
+      - hello.txt
+```
+
+---
+
 ## 💡 How to Extend This Project
 
-* Add a new file type or decorator
-* Create a new class extending `FileDecorator` (similar to `EncryptedFile` or `CompressedFile`)
-* Implement `display()` and `open()` methods for the new behavior
-* Apply the decorator to files in `Main.java`
+- Add a new file type or decorator
+- Create a new class extending `FileDecorator` (similar to `EncryptedFile` or `CompressedFile`)
+- Implement `display()` and `open()` methods for the new behavior
+- Apply the decorator to files in `Main.java`
 
 ### Additional Enhancements
 
-* Add more file system operations such as `deleteFile()`, `renameFile()`, or `copyFile()` in `FileSystemFacade`
-* Enhance the iterator with BFS or file-type filtering
-* Improve output formatting using icons or tags like `[FOLDER]` and `[FILE]`
+- Add more file system operations such as `deleteFile()`, `renameFile()`, or `copyFile()` in `FileSystemFacade`
+- Enhance the iterator with BFS or file-type filtering
+- Improve output formatting using icons or tags like `[FOLDER]` and `[FILE]`
 
 ---
 
@@ -128,6 +151,10 @@ Final File System:
 **Aazain Jan**
 
 This project was created as part of my Software Construction & Development (SCD) coursework
-*Fall 2025*
+_Fall 2025_
 
 ---
+
+```
+
+```
