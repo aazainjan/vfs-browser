@@ -22,7 +22,16 @@ public class Main {
         System.out.println("\nAfter moving hello.txt to Documents:");
         fs.showFileSystem();
 
-        // create decorated file (encrypted) and add to root manually then open with facade
+        // deleting file demo
+        System.out.println("\nDeleting notes.txt from Documents:");
+        fs.deleteFile("/Documents/notes.txt");
+
+        // show after delete
+        System.out.println("\nAfter deleting notes.txt:");
+        fs.showFileSystem();
+
+        // create decorated file (encrypted) and add to root manually then open with
+        // facade
         FileItem secret = new FileItem("secret.txt");
         FileDecorator encrypted = new EncryptedFile(secret);
         System.out.println("\nDecorators demo:");
